@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/water_full.obj-00c81835261be7b379b440b3cf954340.mesh"
+
+[deps]
+
+files=[ "res://.import/water_full.obj-00c81835261be7b379b440b3cf954340.mesh" ]
+
+source_file="res://World/blocks/water/water_full.obj"
+dest_files=[ "res://.import/water_full.obj-00c81835261be7b379b440b3cf954340.mesh", "res://.import/water_full.obj-00c81835261be7b379b440b3cf954340.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

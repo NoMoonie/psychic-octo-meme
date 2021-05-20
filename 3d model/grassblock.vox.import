@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/grassblock.vox-3e4d5b102bd6a402e477b4b77e3a9bbb.mesh"
+
+[deps]
+
+source_file="res://3d model/grassblock.vox"
+dest_files=[ "res://.import/grassblock.vox-3e4d5b102bd6a402e477b4b77e3a9bbb.mesh" ]
+
+[params]
+
+Scale=0.1
