@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://enemy/enemyController.gd" type="Script" id=1]
 
@@ -7,10 +7,13 @@ extents = Vector3( 0.439237, 0.465568, 1.15 )
 
 [sub_resource type="CubeMesh" id=2]
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=3]
 
-[sub_resource type="SphereShape" id=3]
+[sub_resource type="SphereShape" id=4]
 radius = 10.0
+
+[sub_resource type="SphereShape" id=5]
+radius = 4.0
 
 [node name="enemy" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -26,15 +29,22 @@ material/0 = null
 
 [node name="MeshInstance" type="MeshInstance" parent="MeshInstance"]
 transform = Transform( 0.224341, 0, 0, 0, 0.20279, 0, 0, 0, 0.976434, 0, 0.778166, -2.08575 )
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="sightrange" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="sightrange"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 5 )
 
 [node name="eyes" type="Spatial" parent="."]
 
 [connection signal="body_entered" from="sightrange" to="." method="_on_sightrange_body_entered"]
 [connection signal="body_exited" from="sightrange" to="." method="_on_sightrange_body_exited"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
