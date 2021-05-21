@@ -1,0 +1,11 @@
+{
+    "godot_tools.editor_path": "c:\\Users\\emils\\code\\godotBuild\\godot\\bin\\godot.windows.tools.64.exe",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.import": true
+    }
+}
