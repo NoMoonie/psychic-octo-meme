@@ -17,8 +17,8 @@ func _input(event):
 
 
 func _process(_delta):
-	
+
 	cameraRot_v = clamp(cameraRot_v, min_pitch, max_pitch)
-	
+
 	$h.rotation_degrees.y = cameraRot_h
 	$h/v.rotation_degrees.x = cameraRot_v
