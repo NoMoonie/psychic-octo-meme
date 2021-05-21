@@ -23,7 +23,6 @@ enum {
 }
 
 var target
-var target_follow = false
 var state = idle
 
 
@@ -37,7 +36,7 @@ func _on_sightrange_body_entered(body):
 		target = body
 
 
-func _on_sightrange_body_exited(body):
+func _on_sightrange_body_exited(_body):
 	print("not alert")
 	state = idle
 	target = null
@@ -50,7 +49,6 @@ func _physics_process(delta):
 		alert:
 			#eyes.look_at(target.global_transform.origin, Vector3.UP)
 			direction = Vector3(target.transform.origin - transform.origin).normalized()
-			target_follow = true
 			pass
 		stunned:
 			pass
