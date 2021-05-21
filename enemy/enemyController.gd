@@ -63,7 +63,7 @@ func handelMovment(delta):
 		#eyes.rotation.y = lerp_angle(eyes.rotation.y, atan2(direction.x, direction.z), delta * rotation_speed)
 		eyes.look_at(target.global_transform.origin, Vector3.UP)
 		rotate_y(deg2rad(eyes.rotation.y * rotation_speed))
-		
+		#new branch
 	if is_on_floor():
 		y_velocity = -0.01
 	else:
