@@ -7,7 +7,7 @@ export var acceleration : float = 15
 export var air_acceleration : float = 5
 export(float, 0.1, 1, 0.01) var gravity : float = 0.98
 export var max_terminal_velocity : float = 54
-export var jump_power : float = 15
+export var jump_power : float = 10
 export var rotation_speed : float = 7
 
 var direction : Vector3

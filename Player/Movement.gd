@@ -81,12 +81,12 @@ func handle_movement(delta):
 
 	#jump and jump up if close to a wall
 	if is_on_wall():
-		air_acceleration = 10
 		y_velocity = 10
-		pass
-		#var pos = global_transform.origin
-		#global_transform.origin.y = pos.y + 1
-		#print(pos.y)
+
+		#var pos = translation.y
+		#var newPos = round(pos) + 1.0
+		#translation.y = newPos
+		#print(round(pos))
 	if Input.is_action_just_pressed("jump") and is_on_floor() and !Flying:
 		y_velocity = jump_power
 	elif Input.is_action_pressed("jump") and Flying:
