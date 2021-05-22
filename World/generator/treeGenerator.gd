@@ -2,8 +2,8 @@
 const Structure = preload("./structure.gd")
 
 
-var trunk_len_min := 12
-var trunk_len_max := 30
+var trunk_len_min := 6
+var trunk_len_max := 15
 var log_type := 1
 var leaves_type := 2
 var channel := VoxelBuffer.CHANNEL_TYPE
@@ -34,26 +34,26 @@ func generate() -> Structure:
 				voxels[ipos] = log_type
 
 	# Leaves
-	#var log_positions := voxels.keys()
-	#log_positions.shuffle()
-	#var leaf_count := int(0.75 * len(log_positions))
-	#log_positions.resize(leaf_count)
-	#var dirs := [
-	#	Vector3(-1, 0, 0),
-	#	Vector3(1, 0, 0),
-	#	Vector3(0, 0, -1),
-	#	Vector3(0, 0, 1),
-	#	Vector3(0, 1, 0),
-	#	Vector3(0, -1, 0)
-	#]
-	#for c in leaf_count:
-	#	var pos = log_positions[c]
-	#	if pos.y < branches_start:
-	#		continue
-	#	for di in len(dirs):
-	#		var npos = pos + dirs[di]
-	#		if not voxels.has(npos):
-	#			voxels[npos] = leaves_type
+	var log_positions := voxels.keys()
+	log_positions.shuffle()
+	var leaf_count := int(0.75 * len(log_positions))
+	log_positions.resize(leaf_count)
+	var dirs := [
+		Vector3(-1, 0, 0),
+		Vector3(1, 0, 0),
+		Vector3(0, 0, -1),
+		Vector3(0, 0, 1),
+		Vector3(0, 1, 0),
+		Vector3(0, -1, 0)
+	]
+	for c in leaf_count:
+		var pos = log_positions[c]
+		if pos.y < branches_start:
+			continue
+		for di in len(dirs):
+			var npos = pos + dirs[di]
+			if not voxels.has(npos):
+				voxels[npos] = leaves_type
 
 	# Make structure
 	var aabb := AABB()

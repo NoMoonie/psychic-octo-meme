@@ -5,17 +5,12 @@
 [ext_resource path="res://Scenes/WorldEnvironment.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/blocks/mesher.tres" type="VoxelMesherBlocky" id=5]
-[ext_resource path="res://material/terrain.material" type="Material" id=6]
+[ext_resource path="res://material/terrain_material.tres" type="Material" id=6]
 [ext_resource path="res://World/generator/new_genScipt.tres" type="VoxelGeneratorScript" id=7]
 [ext_resource path="res://World/blocks/blocks.gd" type="Script" id=8]
-[ext_resource path="res://World/terrain.png" type="Texture" id=9]
+[ext_resource path="res://material/terrain_material_foliage.tres" type="Material" id=9]
 [ext_resource path="res://enemy/enemy.tscn" type="PackedScene" id=10]
-
-[sub_resource type="SpatialMaterial" id=1]
-flags_transparent = true
-vertex_color_use_as_albedo = true
-albedo_color = Color( 0.5, 0.5, 0.5, 1 )
-albedo_texture = ExtResource( 9 )
+[ext_resource path="res://material/terrain_material_transparent.tres" type="Material" id=11]
 
 [node name="World" type="Spatial"]
 script = ExtResource( 2 )
@@ -39,7 +34,8 @@ generator = ExtResource( 7 )
 mesher = ExtResource( 5 )
 run_stream_in_editor = false
 material/0 = ExtResource( 6 )
-material/1 = SubResource( 1 )
+material/1 = ExtResource( 11 )
+material/2 = ExtResource( 9 )
 
 [node name="WorldEnvironment" parent="." instance=ExtResource( 3 )]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/leaves.obj-907d056965b25e70a3692977ba7d488c.mesh"
+
+[deps]
+
+files=[ "res://.import/leaves.obj-907d056965b25e70a3692977ba7d488c.mesh" ]
+
+source_file="res://World/blocks/leaves/leaves.obj"
+dest_files=[ "res://.import/leaves.obj-907d056965b25e70a3692977ba7d488c.mesh", "res://.import/leaves.obj-907d056965b25e70a3692977ba7d488c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

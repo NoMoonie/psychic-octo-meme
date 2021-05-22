@@ -10,6 +10,8 @@ const GRASS = 2
 const WATER_TOP = 3
 const WATER_FULL = 4
 const STONE = 5
+const LOG = 7
+const LEAVES = 9
 
 const channel : int = VoxelBuffer.CHANNEL_TYPE
 
@@ -39,8 +41,8 @@ func _get_used_channels_mask() -> int:
 func _init():
 	#tree structure
 	var tree_generator = TreeGenerator.new()
-	tree_generator.log_type = STONE
-	tree_generator.leaves_type = STONE
+	tree_generator.log_type = LOG
+	tree_generator.leaves_type = LEAVES
 	for i in 16:
 		var s = tree_generator.generate()
 		_tree_structures.append(s)
