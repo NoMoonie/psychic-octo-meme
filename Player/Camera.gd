@@ -7,7 +7,7 @@ export(float, -90, 0) var min_pitch : float = -90
 export(float, 0, 90) var max_pitch : float = 90
 
 func _ready():
-	pass
+	set_as_toplevel(true)
 	#$h/v/Camera.add_exception(get_parent())
 
 func _input(event):
@@ -16,9 +16,10 @@ func _input(event):
 		cameraRot_v += event.relative.y * mouse_sensitivity
 
 
-func _process(_delta):
-
+func _physics_process(delta):
+	var target = get_parent().translation
+	
 	cameraRot_v = clamp(cameraRot_v, min_pitch, max_pitch)
-
+	global_transform.origin = Vector3(target.x, target.y, target.z)
 	$h.rotation_degrees.y = cameraRot_h
 	$h/v.rotation_degrees.x = cameraRot_v

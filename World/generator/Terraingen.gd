@@ -121,28 +121,28 @@ func _generate_block(buffer : VoxelBuffer, origin : Vector3, lod : int) -> void:
 
 			gz += 1
 	#tree
-	if origin.y <= _trees_max_y and origin.y + block_size >= _trees_min_y:
-		var voxel_tool := buffer.get_voxel_tool()
-		var structure_instances := []
-
-		getTreeInstanceInChunk(chunk_pos, origin, block_size, structure_instances)
-
-		# Relative to current block
-		var block_aabb := AABB(Vector3(), buffer.get_size() + Vector3(1, 1, 1))
-
-		for dir in _moore_dirs:
-			var ncpos : Vector3 = (chunk_pos + dir).round()
-			getTreeInstanceInChunk(ncpos, origin, block_size, structure_instances)
-
-		for structure_instance in structure_instances:
-			var pos : Vector3 = structure_instance[0]
-			var structure : Structure = structure_instance[1]
-			var lower_corner_pos := pos - structure.offset
-			var aabb := AABB(lower_corner_pos, structure.voxels.get_size() + Vector3(1, 1, 1))
-
-			if aabb.intersects(block_aabb):
-				voxel_tool.paste(lower_corner_pos,
-					structure.voxels, 1 << VoxelBuffer.CHANNEL_TYPE, AIR)
+#	if origin.y <= _trees_max_y and origin.y + block_size >= _trees_min_y:
+#		var voxel_tool := buffer.get_voxel_tool()
+#		var structure_instances := []
+#
+#		getTreeInstanceInChunk(chunk_pos, origin, block_size, structure_instances)
+#
+#		# Relative to current block
+#		var block_aabb := AABB(Vector3(), buffer.get_size() + Vector3(1, 1, 1))
+#
+#		for dir in _moore_dirs:
+#			var ncpos : Vector3 = (chunk_pos + dir).round()
+#			getTreeInstanceInChunk(ncpos, origin, block_size, structure_instances)
+#
+#		for structure_instance in structure_instances:
+#			var pos : Vector3 = structure_instance[0]
+#			var structure : Structure = structure_instance[1]
+#			var lower_corner_pos := pos - structure.offset
+#			var aabb := AABB(lower_corner_pos, structure.voxels.get_size() + Vector3(1, 1, 1))
+#
+#			if aabb.intersects(block_aabb):
+#				voxel_tool.paste(lower_corner_pos,
+#					structure.voxels, 1 << VoxelBuffer.CHANNEL_TYPE, AIR)
 
 
 

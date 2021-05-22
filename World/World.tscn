@@ -24,7 +24,6 @@ script = ExtResource( 8 )
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.547, 50, 0.86 )
 spintSpeed = 13
 jump_power = 15.0
-Flying = true
 terrain = NodePath("../VoxelTerrain")
 maxZoom = 50
 zoomSpeed = 50.0
@@ -32,6 +31,7 @@ zoomSpeed = 50.0
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 generator = ExtResource( 7 )
 mesher = ExtResource( 5 )
+generate_collisions = false
 run_stream_in_editor = false
 material/0 = ExtResource( 6 )
 material/1 = ExtResource( 11 )
