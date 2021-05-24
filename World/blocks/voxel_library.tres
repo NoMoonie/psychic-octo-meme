@@ -46,21 +46,25 @@ custom_mesh = ExtResource( 4 )
 voxel_name = "stone"
 geometry_type = 2
 custom_mesh = ExtResource( 5 )
+collision_aabbs = [ AABB( 0, 0, 0, 1, 1, 1 ) ]
 
 [sub_resource type="Voxel" id=7]
 voxel_name = "log_x"
 geometry_type = 2
 custom_mesh = ExtResource( 8 )
+collision_aabbs = [ AABB( 0, 0, 0, 1, 1, 1 ) ]
 
 [sub_resource type="Voxel" id=8]
 voxel_name = "log_y"
 geometry_type = 2
 custom_mesh = ExtResource( 7 )
+collision_aabbs = [ AABB( 0, 0, 0, 1, 1, 1 ) ]
 
 [sub_resource type="Voxel" id=9]
 voxel_name = "log_z"
 geometry_type = 2
 custom_mesh = ExtResource( 6 )
+collision_aabbs = [ AABB( 0, 0, 0, 1, 1, 1 ) ]
 
 [sub_resource type="Voxel" id=10]
 voxel_name = "leaves"

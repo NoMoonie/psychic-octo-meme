@@ -23,7 +23,6 @@ script = ExtResource( 8 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.547, 50, 0.86 )
 spintSpeed = 13
-jump_power = 15.0
 terrain = NodePath("../VoxelTerrain")
 maxZoom = 50
 zoomSpeed = 50.0

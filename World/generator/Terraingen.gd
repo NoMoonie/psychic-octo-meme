@@ -13,6 +13,7 @@ const STONE = 5
 const LOG = 7
 const LEAVES = 9
 
+
 const channel : int = VoxelBuffer.CHANNEL_TYPE
 
 const _moore_dirs = [
@@ -54,7 +55,8 @@ func _init():
 			tallest_tree_height = h
 	_trees_min_y = _heightmap_min_y
 	_trees_max_y = _heightmap_max_y + tallest_tree_height
-
+	
+	
 
 	#ground gen
 	_heightmap_noise.seed = 1244
@@ -121,28 +123,28 @@ func _generate_block(buffer : VoxelBuffer, origin : Vector3, lod : int) -> void:
 
 			gz += 1
 	#tree
-#	if origin.y <= _trees_max_y and origin.y + block_size >= _trees_min_y:
-#		var voxel_tool := buffer.get_voxel_tool()
-#		var structure_instances := []
-#
-#		getTreeInstanceInChunk(chunk_pos, origin, block_size, structure_instances)
-#
-#		# Relative to current block
-#		var block_aabb := AABB(Vector3(), buffer.get_size() + Vector3(1, 1, 1))
-#
-#		for dir in _moore_dirs:
-#			var ncpos : Vector3 = (chunk_pos + dir).round()
-#			getTreeInstanceInChunk(ncpos, origin, block_size, structure_instances)
-#
-#		for structure_instance in structure_instances:
-#			var pos : Vector3 = structure_instance[0]
-#			var structure : Structure = structure_instance[1]
-#			var lower_corner_pos := pos - structure.offset
-#			var aabb := AABB(lower_corner_pos, structure.voxels.get_size() + Vector3(1, 1, 1))
-#
-#			if aabb.intersects(block_aabb):
-#				voxel_tool.paste(lower_corner_pos,
-#					structure.voxels, 1 << VoxelBuffer.CHANNEL_TYPE, AIR)
+	if origin.y <= _trees_max_y and origin.y + block_size >= _trees_min_y:
+		var voxel_tool := buffer.get_voxel_tool()
+		var structure_instances := []
+
+		getTreeInstanceInChunk(chunk_pos, origin, block_size, structure_instances)
+
+		# Relative to current block
+		var block_aabb := AABB(Vector3(), buffer.get_size() + Vector3(1, 1, 1))
+
+		for dir in _moore_dirs:
+			var ncpos : Vector3 = (chunk_pos + dir).round()
+			getTreeInstanceInChunk(ncpos, origin, block_size, structure_instances)
+
+		for structure_instance in structure_instances:
+			var pos : Vector3 = structure_instance[0]
+			var structure : Structure = structure_instance[1]
+			var lower_corner_pos := pos - structure.offset
+			var aabb := AABB(lower_corner_pos, structure.voxels.get_size() + Vector3(1, 1, 1))
+
+			if aabb.intersects(block_aabb):
+				voxel_tool.paste(lower_corner_pos,
+					structure.voxels, 1 << VoxelBuffer.CHANNEL_TYPE, AIR)
 
 
 
@@ -162,6 +164,7 @@ func getTreeInstanceInChunk(cPos: Vector3, offset: Vector3, chunkSize : int, tre
 			var si := rng.randi() % len(_tree_structures)
 			var structure : Structure = _tree_structures[si]
 			treeInstances.append([pos.round(), structure])
+
 
 
 static func _get_chunk_seed_2d(cpos: Vector3) -> int:
