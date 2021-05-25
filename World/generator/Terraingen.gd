@@ -12,6 +12,8 @@ const WATER_FULL = 4
 const STONE = 5
 const LOG = 7
 const LEAVES = 9
+const FLOWER = 10
+const MOSHROOM = 11
 
 
 const channel : int = VoxelBuffer.CHANNEL_TYPE
@@ -59,10 +61,11 @@ func _init():
 	
 
 	#ground gen
-	_heightmap_noise.seed = 1244
-	_heightmap_noise.octaves = 4
-	_heightmap_noise.period = 128
+	_heightmap_noise.seed = 0
+	_heightmap_noise.octaves = 3
 	_heightmap_noise.persistence = 0.5
+	_heightmap_noise.lacunarity = 1.5
+	_heightmap_noise.period = 200
 	hMap.bake()
 
 func _generate_block(buffer : VoxelBuffer, origin : Vector3, lod : int) -> void:
@@ -87,6 +90,9 @@ func _generate_block(buffer : VoxelBuffer, origin : Vector3, lod : int) -> void:
 		buffer.fill(STONE, channel)
 
 	else:
+		var rng := RandomNumberGenerator.new()
+		rng.seed = _get_chunk_seed_2d(chunk_pos)
+		
 		var gx : int
 		var gz := int(origin.z)
 
@@ -106,6 +112,11 @@ func _generate_block(buffer : VoxelBuffer, origin : Vector3, lod : int) -> void:
 						Vector3(x, 0, z), Vector3(x + 1, relative_height, z + 1), channel)
 					if height >= 0:
 						buffer.set_voxel(GRASS, x, relative_height - 1, z, channel)
+						if relative_height < block_size and rng.randf() < 0.1:
+							var foliage = FLOWER
+							if rng.randf() < 0.05:
+								foliage = MOSHROOM
+							buffer.set_voxel(foliage, x, relative_height, z, channel)
 
 
 				#water
@@ -155,7 +166,7 @@ func getTreeInstanceInChunk(cPos: Vector3, offset: Vector3, chunkSize : int, tre
 	rng.seed = _get_chunk_seed_2d(cPos)
 
 	for i in 4:
-		var pos := Vector3(rng.randi() % chunkSize, 0, rng.randi() % chunkSize)
+		var pos := Vector3(rng.randi() % 96, 0, rng.randi() % 96)
 		pos += cPos * chunkSize
 		pos.y = _get_height_at(pos.x, pos.z)
 
@@ -168,7 +179,7 @@ func getTreeInstanceInChunk(cPos: Vector3, offset: Vector3, chunkSize : int, tre
 
 
 static func _get_chunk_seed_2d(cpos: Vector3) -> int:
-	return int(cpos.x) ^ (31 * int(cpos.z))
+	return int(cpos.x) ^ (63 * int(cpos.z))
 
 func _get_height_at(x: int, z: int) -> int:
 	var t = 0.5 + 0.5 * _heightmap_noise.get_noise_2d(x, z)

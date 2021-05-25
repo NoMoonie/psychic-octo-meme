@@ -84,7 +84,7 @@ func Movement(delta):
 	velocity.z = motor.z
 	velocity.y -= gravity * delta * acceleration
 	
-	if _grounded and Input.is_action_just_pressed("jump"):
+	if _grounded and Input.is_action_pressed("jump"):
 		velocity.y = jump_power
 	
 	var motion = velocity * delta
