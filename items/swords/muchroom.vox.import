@@ -1,0 +1,16 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions"
+type="Mesh"
+path="res://.import/muchroom.vox-1d9b2cc495aa75809746f6dd967e7204.mesh"
+
+[deps]
+
+source_file="res://items/swords/muchroom.vox"
+dest_files=[ "res://.import/muchroom.vox-1d9b2cc495aa75809746f6dd967e7204.mesh" ]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false
