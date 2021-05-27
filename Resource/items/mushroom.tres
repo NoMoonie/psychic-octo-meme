@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scipts/inventory/item.gd" type="Script" id=1]
+[ext_resource path="res://World/blocks/mushroom/mushroom.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Mushroom"
+id = 1
+stackable = true
+max_stack_size = 100
+type = 4
+texture = ExtResource( 2 )
