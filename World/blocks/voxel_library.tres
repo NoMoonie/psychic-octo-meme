@@ -10,7 +10,7 @@
 [ext_resource path="res://World/blocks/log/log_x.obj" type="ArrayMesh" id=8]
 [ext_resource path="res://World/blocks/leaves/leaves.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://World/blocks/flower/flower.obj" type="ArrayMesh" id=10]
-[ext_resource path="res://World/blocks/moshroom/moshroom.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://World/blocks/mushroom/moshroom.obj" type="ArrayMesh" id=11]
 
 [sub_resource type="Voxel" id=1]
 voxel_name = "air"

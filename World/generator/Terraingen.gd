@@ -112,9 +112,9 @@ func _generate_block(buffer : VoxelBuffer, origin : Vector3, lod : int) -> void:
 						Vector3(x, 0, z), Vector3(x + 1, relative_height, z + 1), channel)
 					if height >= 0:
 						buffer.set_voxel(GRASS, x, relative_height - 1, z, channel)
-						if relative_height < block_size and rng.randf() < 0.1:
+						if relative_height < block_size and rng.randf() < 0.01:
 							var foliage = FLOWER
-							if rng.randf() < 0.05:
+							if rng.randf() < 0.02:
 								foliage = MOSHROOM
 							buffer.set_voxel(foliage, x, relative_height, z, channel)
 
