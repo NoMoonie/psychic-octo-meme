@@ -8,11 +8,48 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://Scipts/inventory/inventory.gd"
+}, {
+"base": "Resource",
+"class": "ItemResource",
+"language": "GDScript",
+"path": "res://Scipts/inventory/item.gd"
+}, {
+"base": "Node2D",
+"class": "mouse_slot",
+"language": "GDScript",
+"path": "res://UI/mouse_slot.gd"
+}, {
+"base": "Panel",
+"class": "slot",
+"language": "GDScript",
+"path": "res://UI/slot.gd"
+} ]
+_global_script_class_icons={
+"Inventory": "",
+"ItemResource": "",
+"mouse_slot": "",
+"slot": ""
+}
+
 [application]
 
 config/name="VoxelProj"
 run/main_scene="res://World/World.tscn"
-config/icon="res://icon.png"
+
+[autoload]
+
+ItemDatebase="*res://Scipts/Manegers/itemDatebase.gd"
+GameManeger="*res://Scipts/Manegers/gameManeger.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
 
 [editor_plugins]
 
