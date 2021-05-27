@@ -11,9 +11,10 @@ func _ready():
 	#$h/v/Camera.add_exception(get_parent())
 
 func _input(event):
-	if event is InputEventMouseMotion:
-		cameraRot_h += -event.relative.x * mouse_sensitivity
-		cameraRot_v += event.relative.y * mouse_sensitivity
+	if Input.get_mouse_mode() != Input.MOUSE_MODE_VISIBLE:
+		if event is InputEventMouseMotion:
+			cameraRot_h += -event.relative.x * mouse_sensitivity
+			cameraRot_v += event.relative.y * mouse_sensitivity
 
 
 func _physics_process(delta):
