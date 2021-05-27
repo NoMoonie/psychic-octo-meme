@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/blocks/mushroom/moshroom.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/material/itemMovement.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "wave"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.5, 0, -0.5 ), Vector3( -0.5, 0.5, -0.5 ) ]
+}
+
+[node name="item" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00410855, 0, 0.000673771 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/wave = SubResource( 1 )
