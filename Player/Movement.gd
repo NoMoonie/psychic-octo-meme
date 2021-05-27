@@ -2,6 +2,7 @@ extends KinematicBody
 
 const Util = preload("res://common/util.gd")
 
+
 #player movement
 export(int, 1, 50) var walkSpeed : int = 10
 export(int, 1, 100) var spintSpeed : int = 15
@@ -37,8 +38,11 @@ onready var animPlayer = $playerModel/AnimationPlayer
 var _terrain_tool = null
 var _grounded = false
 
+var inv_res = load("res://Scipts/inventory/inventory.gd")
+var inventory = inv_res.new()
 
 func _ready():
+	
 	boxMover.set_collision_mask(1)
 	var terrain = get_parent().get_node("VoxelTerrain")
 	_terrain_tool = terrain.get_voxel_tool()
