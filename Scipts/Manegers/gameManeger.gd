@@ -6,7 +6,9 @@ var player
 
 func _input(event):
 	if event is InputEventKey and Input.is_key_pressed(KEY_L):
-		player.inventory.add_item_to_index("Mushroom", 20, 0)
+		player.inventory.add_item("Grass", 16)
+	if event is InputEventKey and Input.is_key_pressed(KEY_J):
+		player.inventory.clear_inventory()
 func _process(delta):
 	if not player:
 		init_player()
@@ -24,8 +26,6 @@ func init_player():
 	var existing_inv = load("user://inventory.tres")
 	if existing_inv:
 		player.inventory.set_items(existing_inv.get_items())
-		#for i in range(0, 20):
-			#player.inventory.add_item_to_index("Mushroom", 23, i)
 		#player.inventory.add_item_to_index("Mushroom", 20, 1)
 	else:
 		#player.inventory.add_item_to_index("Mushroom", 23, 0)
