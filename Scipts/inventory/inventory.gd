@@ -95,5 +95,8 @@ func add_quantity(index, quantity, item) -> Dictionary:
 	return new_item
 	emit_signal("inventory_changed", self)
 
-
+func clear_inventory():
+	for i in range(_items.size()):
+		_items[i] = null 
+	emit_signal("inventory_changed", self)
 
