@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/WorldCommon.gd" type="Script" id=2]
 [ext_resource path="res://World/WorldEnvironment.tscn" type="PackedScene" id=3]
-[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/interface.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/blocks/mesher.tres" type="VoxelMesherBlocky" id=5]
 [ext_resource path="res://Assets/material/terrain_material.tres" type="Material" id=6]
 [ext_resource path="res://World/generator/new_genScipt.tres" type="VoxelGeneratorScript" id=7]
@@ -12,7 +12,6 @@
 [ext_resource path="res://enemy/enemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/material/terrain_material_transparent.tres" type="Material" id=11]
 [ext_resource path="res://Assets/material/foliage.material" type="Material" id=12]
-[ext_resource path="res://UI/Inventory.tscn" type="PackedScene" id=13]
 
 [node name="World" type="Spatial"]
 script = ExtResource( 2 )
@@ -20,7 +19,7 @@ script = ExtResource( 2 )
 [node name="blocks" type="Node" parent="."]
 script = ExtResource( 8 )
 
-[node name="UI" parent="." instance=ExtResource( 4 )]
+[node name="interface" parent="." instance=ExtResource( 4 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.547, 50, 0.86 )
@@ -43,5 +42,3 @@ material/3 = ExtResource( 12 )
 
 [node name="enemy" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1893, 64.3088, -13.1714 )
-
-[node name="Inventory" parent="." instance=ExtResource( 13 )]

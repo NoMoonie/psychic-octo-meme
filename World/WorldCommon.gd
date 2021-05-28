@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var invnode = $Inventory
+onready var invnode = $interface/Inventory
 var inv_show = false;
 
 func _init():
@@ -15,9 +15,9 @@ func _ready():
 
 func _physics_process(_delta):
 	#### Update HUD
-	$UI/VBox/FPS.text = "FPS: " + String(Engine.get_frames_per_second())
+	$interface/UI/VBox/FPS.text = "FPS: " + String(Engine.get_frames_per_second())
 	var pos = $Player.global_transform.origin
-	$UI/VBox/Position.text = "Position: (%.1f, %.1f, %.1f)" % [pos.x, pos.y, pos.z]
+	$interface/UI/VBox/Position.text = "Position: (%.1f, %.1f, %.1f)" % [pos.x, pos.y, pos.z]
 
 func _input(event):
 	if event is InputEventKey and Input.is_key_pressed(KEY_P):

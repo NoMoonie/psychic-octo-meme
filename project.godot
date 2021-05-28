@@ -22,12 +22,12 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "mouse_slot",
 "language": "GDScript",
-"path": "res://UI/mouse_slot.gd"
+"path": "res://UI/inventory/mouse_slot.gd"
 }, {
 "base": "Panel",
 "class": "slot",
 "language": "GDScript",
-"path": "res://UI/slot.gd"
+"path": "res://UI/inventory/slot.gd"
 } ]
 _global_script_class_icons={
 "Inventory": "",
