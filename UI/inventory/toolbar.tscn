@@ -2,10 +2,10 @@
 
 [ext_resource path="res://UI/inventory/scripts/toolGui.gd" type="Script" id=1]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0705882, 0.0705882, 0.0705882, 0 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 
 [node name="toolbar" type="Container"]
 anchor_top = 1.0
@@ -22,17 +22,18 @@ __meta__ = {
 margin_right = 400.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 400, 60 )
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
 
 [node name="GridContainer" type="GridContainer" parent="background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
+anchor_left = 0.025
+anchor_top = 0.167
+anchor_right = 0.877
+anchor_bottom = 0.833
+margin_top = -0.0200005
+margin_right = 0.199982
+margin_bottom = 0.0199966
 custom_constants/vseparation = 0
-custom_constants/hseparation = 8
+custom_constants/hseparation = 3
 columns = 8
 __meta__ = {
 "_edit_use_anchors_": false
@@ -42,53 +43,53 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="slot2" type="Panel" parent="background/GridContainer"]
-margin_left = 48.0
-margin_right = 88.0
+margin_left = 43.0
+margin_right = 83.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="slot3" type="Panel" parent="background/GridContainer"]
-margin_left = 96.0
-margin_right = 136.0
+margin_left = 86.0
+margin_right = 126.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="slot4" type="Panel" parent="background/GridContainer"]
-margin_left = 144.0
-margin_right = 184.0
+margin_left = 129.0
+margin_right = 169.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="slot5" type="Panel" parent="background/GridContainer"]
-margin_left = 192.0
-margin_right = 232.0
+margin_left = 172.0
+margin_right = 212.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="slot6" type="Panel" parent="background/GridContainer"]
-margin_left = 240.0
-margin_right = 280.0
+margin_left = 215.0
+margin_right = 255.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="slot7" type="Panel" parent="background/GridContainer"]
-margin_left = 288.0
-margin_right = 328.0
+margin_left = 258.0
+margin_right = 298.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="slot8" type="Panel" parent="background/GridContainer"]
-margin_left = 336.0
-margin_right = 376.0
+margin_left = 301.0
+margin_right = 341.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )

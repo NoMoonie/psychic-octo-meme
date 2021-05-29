@@ -1,9 +1,7 @@
 extends Resource
 class_name Inventory
 
-
 signal inventory_changed
-
 
 export var _items = Array() setget set_items, get_items
 
@@ -97,5 +95,6 @@ func clear_inventory():
 		_items[i] = null 
 	emit_signal("inventory_changed", self)
 	
-	
+func create_resourse(filename:String, size:int):
+	pass
 

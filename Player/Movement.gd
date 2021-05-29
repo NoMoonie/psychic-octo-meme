@@ -12,7 +12,7 @@ export var air_acceleration : float = 5
 export var gravity : float = 5
 export var max_terminal_velocity : float = 54
 export var jump_power : float = 17
-export var rotation_speed : float = 7
+export var rotation_speed : float = 10
 export var Flying : bool = false
 
 #box mover collitions
@@ -40,7 +40,6 @@ var _grounded = false
 
 var inventory = load("res://Resource/inv.tres")
 var toolbar = load("res://Resource/toolbar.tres")
-
 
 func _ready():
 	boxMover.set_collision_mask(1)

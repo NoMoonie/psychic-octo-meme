@@ -18,7 +18,7 @@ func _ready():
 	 
 func _inv_change(_inv):
 	if !item:
-		var new_item = playerset.toolbar.get_item(slot_index)
+		var new_item = _inv.get_item(slot_index)
 		if new_item:
 			item = new_item
 			print("---------------------------------------------")
@@ -26,7 +26,7 @@ func _inv_change(_inv):
 			print(new_item.item_referance.name)
 			print("---------------------------------------------")
 	else:
-		var new_item = playerset.toolbar.get_item(slot_index)
+		var new_item = _inv.get_item(slot_index)
 		if !new_item:
 			item = new_item
 	refresh()
@@ -59,14 +59,15 @@ func refresh():
 		label.text = ""
 		itemImg.texture = null
 		set("custom_styles/panel", style_empty)
+		
 	
-func _notification(what):
-	match what:
-		NOTIFICATION_MOUSE_ENTER:
-			set("custom_styles/panel", style_hover)
-		NOTIFICATION_MOUSE_EXIT:
-			if item != null:
-				set("custom_styles/panel", style)
-			else:	
-				set("custom_styles/panel", style_empty)
+#func _notification(what):
+#	match what:
+#		NOTIFICATION_MOUSE_ENTER:
+#			set("custom_styles/panel", style_hover)
+#		NOTIFICATION_MOUSE_EXIT:
+#			if item != null:
+#				set("custom_styles/panel", style)
+#			else:	
+#				set("custom_styles/panel", style_empty)
 	

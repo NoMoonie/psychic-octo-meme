@@ -6,27 +6,30 @@ export var gravity : float = 5
 export var max_terminal_velocity : float = 54
 export var rotation_speed : float = 7
 
+var item = null
+onready var mesh = $MeshInstance
 # Not used in this script, but might be useful for child nodes because
 # this controller will most likely be on the root
 export(NodePath) var terrain = null
+
+func _ready():
+	mesh.mesh = item.item_referance.mesh
+	mesh.material_override = item.item_referance.mesh_texture
 
 var _velocity = Vector3()
 var _grounded = false
 var _box_mover = VoxelBoxMover.new()
 
 func _physics_process(delta):
-	
-	
 	#_velocity.x = motor.x
 	#_velocity.z = motor.z
 	_velocity.y -= gravity * delta * acceleration
 	
 	if _grounded:
 		$AnimationPlayer.play("wave")
-		$AnimationPlayer.playback_speed = 1
+		$AnimationPlayer.playback_speed = 0.5
 	
 	var motion = _velocity * delta
-	print(motion)
 	if has_node(terrain):
 		var aabb = AABB(Vector3(-0.4, 0, -0.4), Vector3(0.8, 1.8, 0.8))
 		var terrain_node = get_node(terrain)

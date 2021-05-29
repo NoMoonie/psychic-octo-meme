@@ -10,3 +10,4 @@ enum itemType { Generic, Consumable, Quest, Equipment, CraftingMaterial }
 export(itemType) var type 
 export var texture : Texture
 export var mesh : Mesh
+export var mesh_texture: Material

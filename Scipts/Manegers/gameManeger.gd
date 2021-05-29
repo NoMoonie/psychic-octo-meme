@@ -4,9 +4,10 @@ signal player_init
 
 var player
 
+
 func _input(event):
 	if event is InputEventKey and Input.is_key_pressed(KEY_L):
-		player.inventory.add_item("Axe", 16)
+		player.inventory.add_item("Grass", 5)
 	if event is InputEventKey and Input.is_key_pressed(KEY_J):
 		player.inventory.clear_inventory()
 		
@@ -34,7 +35,6 @@ func init_player():
 	else:
 		player.inventory.add_item("Grass", 99)
 		player.toolbar.add_item("Axe", 1)
-		pass
 	
 func _on_player_inventory_changed(inv):
 	var res = ResourceSaver.save("user://inventory.tres", inv)

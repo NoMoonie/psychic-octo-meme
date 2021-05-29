@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://World/blocks/mushroom/moshroom.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://World/blocks/grass/grass.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/material/itemMovement.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -23,7 +23,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00410855, 0, 0.000673771 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5 )
 mesh = ExtResource( 1 )
 material/0 = null
 

@@ -19,10 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scipts/inventory/item.gd"
 }, {
-"base": "Resource",
-"class": "ToolBar",
+"base": "Control",
+"class": "gridgui",
 "language": "GDScript",
-"path": "res://Scipts/inventory/toolbar.gd"
+"path": "res://UI/inventory/GridGUI.gd"
 }, {
 "base": "Node2D",
 "class": "mouse_slot",
@@ -42,7 +42,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Inventory": "",
 "ItemResource": "",
-"ToolBar": "",
+"gridgui": "",
 "mouse_slot": "",
 "slot": "",
 "toolslot": ""
