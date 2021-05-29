@@ -1,16 +1,17 @@
 extends Resource
-class_name Inventory
+class_name ToolBar
 
-
-signal inventory_changed
-
+signal toolbar_changed
 
 export var _items = Array() setget set_items, get_items
 
+func _init(size : int = 1):
+	_items.resize(size)
 
 func set_items(new_items):
 	_items = new_items
-	emit_signal("inventory_changed", self)
+	
+	emit_signal("toolbar_changed", self)
 	
 func get_items():
 	return _items
@@ -60,7 +61,7 @@ func add_item(item_name, quantity):
 				break
 		remaining_quantity -= new_item.quantity
 	
-	emit_signal("inventory_changed", self)
+	emit_signal("toolbar_changed", self)
 
 func add_item_to_index(item_name, quantity, index):
 	var item = ItemDatebase.get_item(item_name)
@@ -73,15 +74,15 @@ func add_item_to_index(item_name, quantity, index):
 		}
 		_items[index] = new_item
 		remaining_quantity -= new_item.quantity
-	emit_signal("inventory_changed", self)
+	emit_signal("toolbar_changed", self)
 
 func remove_item(index):
 	_items[index] = null
-	emit_signal("inventory_changed", self)
+	emit_signal("toolbar_changed", self)
 
 func move_item_to_index(item, index):
 	_items[index] = item
-	emit_signal("inventory_changed", self)
+	emit_signal("toolbar_changed", self)
 
 func add_quantity(index, quantity, item) -> Dictionary:
 	var new_item = {
@@ -89,13 +90,11 @@ func add_quantity(index, quantity, item) -> Dictionary:
 			quantity = quantity
 		}
 	_items[index] = new_item
-	emit_signal("inventory_changed", self)
+	emit_signal("toolbar_changed", self)
 	return new_item
 
 func clear_inventory():
 	for i in range(_items.size()):
 		_items[i] = null 
-	emit_signal("inventory_changed", self)
-	
-	
+	emit_signal("toolbar_changed", self)
 

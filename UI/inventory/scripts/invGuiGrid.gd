@@ -1,8 +1,8 @@
 extends Control
 
-var slot = preload("res://UI/inventory/slot.gd")
+var slot_script = preload("res://UI/inventory/scripts/slot.gd")
+var slot_item = preload("res://UI/inventory/inv_item.tscn")
 var init = false
-var holding_item = null
 
 onready var grid = $background/GridContainer
 onready var mouse_slot = $mouse_slot
@@ -22,25 +22,14 @@ func _on_player_inventory_changed(inv):
 		for item in inv.get_items():
 			#create panel and textureReact
 			var slots = Panel.new()
-			var texture_rect = TextureRect.new()
-			var number = Label.new()
 			#size of the slot and the item image
 			slots.rect_min_size = Vector2(40, 40)
 			slots.rect_scale = Vector2(0.5, 0.5)
-			texture_rect.rect_scale = Vector2(0.5, 0.5)
-			texture_rect.name = "item"
-			number.name = "quantity"
-			#adding script and item image to the slot
-			slots.add_child(texture_rect)
-			slots.add_child(number)
-			slots.set_script(slot)
+			var _item = slot_item.instance()
+			slots.add_child(_item)
+			slots.set_script(slot_script)
 			if item != null:
 				slots.item = item
-				number.text = String(item.quantity)
-				#mesh.texture = item.item_referance.texture
-				#item_label.text = "%s x%d" % [item.item_referance.name, item.quantity]
-			else:
-				pass
 			slots.slot_index = index
 			grid.add_child(slots)
 			index += 1
@@ -126,7 +115,6 @@ func slots_gui_input(event: InputEvent, slot: slot):
 					pass
 				else:
 					if slot.item.item_referance.stackable:
-						var max_stack_size = slot.item.item_referance.max_stack_size
 						var slot_item_quantity = slot.item.quantity
 						var split_stack = slot_item_quantity % 2
 						mouse_slot.set_global_position(get_global_mouse_position())
@@ -141,7 +129,7 @@ func slots_gui_input(event: InputEvent, slot: slot):
 								slot.addInToSlot(split_stack, slot.slot_index, slot.item)
 								mouse_slot.addItemRemainder(split_stack, slot.item)
 						
-func _input(event):
+func _input(_event):
 	if 	mouse_slot.item:
 		mouse_slot.set_global_position(get_global_mouse_position())
 	else:

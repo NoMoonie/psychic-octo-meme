@@ -4,8 +4,8 @@ class_name mouse_slot
 var slot_index = 6969
 var item = null
 
-onready var itemImg = $item
-onready var label = $Label
+onready var itemImg = $container/item
+onready var label = $container/Label
 
 func _ready():
 	refresh()
@@ -37,7 +37,10 @@ func addItemRemainder(quantity, _item):
 
 func refresh():
 	if item != null:
-		label.text = String(item.quantity)
+		if item.quantity == 1:
+			label.text = ""
+		else:
+			label.text = String(item.quantity)
 		itemImg.texture = item.item_referance.texture
 	else:
 		label.text = ""

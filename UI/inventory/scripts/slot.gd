@@ -1,28 +1,22 @@
 extends Panel
 class_name slot
 
-var style_tex = preload("res://slot_style.png")
-var style_empty_tex = preload("res://slot_style_empty.png")
-
-var style : StyleBoxTexture = null
-var style_empty : StyleBoxTexture = null
+var style : StyleBoxTexture = preload("res://UI/styles/stylebox/default_style.stylebox")
+var style_empty : StyleBoxTexture = preload("res://UI/styles/stylebox/empty_style.stylebox")
+var style_hover : StyleBoxTexture = preload("res://UI/styles/stylebox/hover_style.stylebox")
 
 var slot_index = 0
 var item = null
 
-onready var itemImg = $item
-onready var label = $quantity
+onready var itemImg = $container/item
+onready var label = $container/Label
 onready var playerset = get_tree().get_root().get_node("/root/World/Player")
 
 func _ready():
-	style = StyleBoxTexture.new()
-	style_empty = StyleBoxTexture.new()
-	style.texture = style_tex
-	style_empty.texture = style_empty_tex
 	refresh()
 	playerset.inventory.connect("inventory_changed", self, "_inv_change")
 	
-func _inv_change(inv):
+func _inv_change(_inv):
 	if !item:
 		var new_item = playerset.inventory.get_item(slot_index)
 		if new_item:
@@ -49,13 +43,15 @@ func putInToSlot(mouse_item, index):
 	
 func addInToSlot(quantity, index, item_ref):
 	var new_item = playerset.inventory.add_quantity(index, quantity, item_ref)
-	print(new_item)
 	item = new_item
 	refresh()
 	
 func refresh():
 	if item != null:
-		label.text = String(item.quantity)
+		if item.quantity == 1:
+			label.text = ""
+		else:
+			label.text = String(item.quantity)
 		itemImg.texture = item.item_referance.texture
 		set("custom_styles/panel", style)
 	else:
@@ -63,5 +59,15 @@ func refresh():
 		itemImg.texture = null
 		set("custom_styles/panel", style_empty)
 	
-	
+func _notification(what):
+	match what:
+		NOTIFICATION_MOUSE_ENTER:
+			pass
+			#set("custom_styles/panel", style_hover)
+		NOTIFICATION_MOUSE_EXIT:
+			pass
+			#if item != null:
+			#	set("custom_styles/panel", style)
+			#else:	
+			#	set("custom_styles/panel", style_empty)
 	

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slot_style.png-153cbdcf588b3403a81b9c421bf4253d.stex"
+path="res://.import/axe.png-6b6cf06292708c88d43a23573b8f4e0f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://slot_style.png"
-dest_files=[ "res://.import/slot_style.png-153cbdcf588b3403a81b9c421bf4253d.stex" ]
+source_file="res://Assets/items/axe/axe.png"
+dest_files=[ "res://.import/axe.png-6b6cf06292708c88d43a23573b8f4e0f.stex" ]
 
 [params]
 

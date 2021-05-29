@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/InvBackpackTree.png-0ccc6109ef4ebcd6dc8be426f8f93e27.stex"
+path="res://.import/axeiso.png-235050489f596e1679c134050d5a6559.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://InvBackpackTree.png"
-dest_files=[ "res://.import/InvBackpackTree.png-0ccc6109ef4ebcd6dc8be426f8f93e27.stex" ]
+source_file="res://Assets/items/axe/axeiso.png"
+dest_files=[ "res://.import/axeiso.png-235050489f596e1679c134050d5a6559.stex" ]
 
 [params]
 

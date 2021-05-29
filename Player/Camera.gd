@@ -17,7 +17,7 @@ func _input(event):
 			cameraRot_v += event.relative.y * mouse_sensitivity
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var target = get_parent().translation
 	
 	cameraRot_v = clamp(cameraRot_v, min_pitch, max_pitch)

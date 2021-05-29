@@ -38,11 +38,11 @@ onready var animPlayer = $playerModel/AnimationPlayer
 var _terrain_tool = null
 var _grounded = false
 
-var inv_res = load("res://Scipts/inventory/inventory.gd")
-var inventory = inv_res.new()
+var inventory = load("res://Resource/inv.tres")
+var toolbar = load("res://Resource/toolbar.tres")
+
 
 func _ready():
-	
 	boxMover.set_collision_mask(1)
 	var terrain = get_parent().get_node("VoxelTerrain")
 	_terrain_tool = terrain.get_voxel_tool()
@@ -67,7 +67,7 @@ func Movement(delta):
 	Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")).rotated(Vector3.UP, h_rot).normalized()
 	
 	if direction != Vector3.ZERO:
-		var hit = getPointVoxel($playerModel)
+		var _hit = getPointVoxel($playerModel)
 		#rotate in the moving direction
 		$playerModel.rotation.y = lerp_angle($playerModel.rotation.y, atan2(-direction.x, -direction.z), delta * rotation_speed)
 		#animate player model
