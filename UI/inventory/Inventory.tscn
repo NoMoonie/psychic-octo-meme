@@ -1,33 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://UI/inventory/scripts/invGuiGrid.gd" type="Script" id=1]
-[ext_resource path="res://UI/inventory/scripts/mouse_slot.gd" type="Script" id=2]
-[ext_resource path="res://UI/inventory/inv_item.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/inventory/scripts/grid/invGui.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0705882, 0.0705882, 0.0705882, 0 )
+bg_color = Color( 0.0705882, 0.0705882, 0.0705882, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 
 [node name="Inventory" type="Container"]
+anchor_right = 0.422
+anchor_bottom = 0.396
+margin_right = -540.16
+margin_bottom = -285.12
 rect_scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mouse_slot" type="Node2D" parent="."]
-z_index = 1
-script = ExtResource( 2 )
-
-[node name="container" parent="mouse_slot" instance=ExtResource( 4 )]
-margin_left = -20.0
-margin_top = -20.0
-
 [node name="background" type="Panel" parent="."]
-margin_right = 403.0
-margin_bottom = 210.0
-rect_min_size = Vector2( 403, 210 )
+margin_right = 360.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 340, 180 )
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -38,10 +32,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -181.5
-margin_top = -87.5
-margin_right = 181.5
-margin_bottom = 87.5
+margin_left = -170.5
+margin_top = -84.5
+margin_right = 170.5
+margin_bottom = 84.5
 size_flags_stretch_ratio = 0.0
 custom_constants/vseparation = 3
 custom_constants/hseparation = 3

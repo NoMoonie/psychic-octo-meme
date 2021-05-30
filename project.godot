@@ -19,33 +19,33 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scipts/inventory/item.gd"
 }, {
-"base": "Control",
-"class": "gridgui",
+"base": "slot",
+"class": "inventory_slot",
 "language": "GDScript",
-"path": "res://UI/inventory/GridGUI.gd"
+"path": "res://UI/inventory/scripts/slots/invSlot.gd"
 }, {
 "base": "Node2D",
 "class": "mouse_slot",
 "language": "GDScript",
-"path": "res://UI/inventory/scripts/mouse_slot.gd"
+"path": "res://UI/inventory/scripts/slots/mouse_slot.gd"
 }, {
 "base": "Panel",
 "class": "slot",
 "language": "GDScript",
-"path": "res://UI/inventory/scripts/slot.gd"
+"path": "res://invgui/slot.gd"
 }, {
-"base": "Panel",
-"class": "toolslot",
+"base": "slot",
+"class": "tool_slot",
 "language": "GDScript",
-"path": "res://UI/inventory/scripts/toolSlot.gd"
+"path": "res://UI/inventory/scripts/slots/toolSlot.gd"
 } ]
 _global_script_class_icons={
 "Inventory": "",
 "ItemResource": "",
-"gridgui": "",
+"inventory_slot": "",
 "mouse_slot": "",
 "slot": "",
-"toolslot": ""
+"tool_slot": ""
 }
 
 [application]

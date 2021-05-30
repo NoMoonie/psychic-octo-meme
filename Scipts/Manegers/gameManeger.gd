@@ -4,10 +4,9 @@ signal player_init
 
 var player
 
-
 func _input(event):
 	if event is InputEventKey and Input.is_key_pressed(KEY_L):
-		player.inventory.add_item("Grass", 5)
+		player.inventory.add_item("Mushroom", 100)
 	if event is InputEventKey and Input.is_key_pressed(KEY_J):
 		player.inventory.clear_inventory()
 		
