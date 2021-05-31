@@ -1,11 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://menus/toolbar/scripts/toolGui.gd" type="Script" id=1]
+[ext_resource path="res://menus/guisScripts/equipmentGui.gd" type="Script" id=1]
+[ext_resource path="res://menus/slotTypes/toolSlot.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0705882, 0.0705882, 0.0705882, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
 
 [node name="toolbar" type="Container"]
 anchor_left = 0.211
@@ -46,57 +45,57 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="slot" type="Panel" parent="background/GridContainer"]
+[node name="tool_slot" type="Panel" parent="background/GridContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="slot2" type="Panel" parent="background/GridContainer"]
+[node name="tool_slot2" type="Panel" parent="background/GridContainer"]
 margin_left = 43.0
 margin_right = 83.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="slot3" type="Panel" parent="background/GridContainer"]
+[node name="tool_slot3" type="Panel" parent="background/GridContainer"]
 margin_left = 86.0
 margin_right = 126.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="slot4" type="Panel" parent="background/GridContainer"]
+[node name="tool_slot4" type="Panel" parent="background/GridContainer"]
 margin_left = 129.0
 margin_right = 169.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="slot5" type="Panel" parent="background/GridContainer"]
+[node name="tool_slot5" type="Panel" parent="background/GridContainer"]
 margin_left = 172.0
 margin_right = 212.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="slot6" type="Panel" parent="background/GridContainer"]
+[node name="tool_slot6" type="Panel" parent="background/GridContainer"]
 margin_left = 215.0
 margin_right = 255.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="slot7" type="Panel" parent="background/GridContainer"]
+[node name="tool_slot7" type="Panel" parent="background/GridContainer"]
 margin_left = 258.0
 margin_right = 298.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="slot8" type="Panel" parent="background/GridContainer"]
+[node name="tool_slot8" type="Panel" parent="background/GridContainer"]
 margin_left = 301.0
 margin_right = 341.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )

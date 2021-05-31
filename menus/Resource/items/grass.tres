@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
-[ext_resource path="res://menus/assets/scripts/item.gd" type="Script" id=1]
+[ext_resource path="res://globals/scripts/item.gd" type="Script" id=1]
 [ext_resource path="res://scenes/overworld/blocks/grass/grassiso.png" type="Texture" id=2]
 [ext_resource path="res://scenes/overworld/blocks/grass/grass.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Assets/material/terrain_material.tres" type="Material" id=4]

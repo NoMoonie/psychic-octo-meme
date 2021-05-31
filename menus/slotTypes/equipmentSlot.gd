@@ -2,8 +2,8 @@ extends slot
 class_name equipment_slot
 
 func _ready():
-	style = preload("../../assets/styles/SlotStyles/default_style.stylebox")
-	style_empty = preload("../../assets/styles/SlotStyles/empty_style.stylebox")
+	style = preload("res://menus/assets/styles/SlotStyles/default_style.stylebox")
+	style_empty = preload("res://menus/assets/styles/SlotStyles/empty_style.stylebox")
 	itemImg = $container/item
 	label = $container/Label
 	node = get_tree().get_root().get_node("/root/World/Player")

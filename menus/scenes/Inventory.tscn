@@ -1,11 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://menus/inventory/scripts/invGui.gd" type="Script" id=1]
+[ext_resource path="res://menus/guisScripts/invGui.gd" type="Script" id=1]
+[ext_resource path="res://menus/slotTypes/invSlot.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0705882, 0.0705882, 0.0705882, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
 
 [node name="Inventory" type="Container"]
 anchor_right = 0.422
@@ -46,248 +45,246 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot" type="Panel" parent="background/GridContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel2" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot2" type="Panel" parent="background/GridContainer"]
 margin_left = 43.0
 margin_right = 83.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel3" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot3" type="Panel" parent="background/GridContainer"]
 margin_left = 86.0
 margin_right = 126.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel4" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot4" type="Panel" parent="background/GridContainer"]
 margin_left = 129.0
 margin_right = 169.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel5" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot5" type="Panel" parent="background/GridContainer"]
 margin_left = 172.0
 margin_right = 212.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel6" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot6" type="Panel" parent="background/GridContainer"]
 margin_left = 215.0
 margin_right = 255.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel7" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot7" type="Panel" parent="background/GridContainer"]
 margin_left = 258.0
 margin_right = 298.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel8" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot8" type="Panel" parent="background/GridContainer"]
 margin_left = 301.0
 margin_right = 341.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel9" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot9" type="Panel" parent="background/GridContainer"]
 margin_top = 43.0
 margin_right = 40.0
 margin_bottom = 83.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel10" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot10" type="Panel" parent="background/GridContainer"]
 margin_left = 43.0
 margin_top = 43.0
 margin_right = 83.0
 margin_bottom = 83.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel11" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot11" type="Panel" parent="background/GridContainer"]
 margin_left = 86.0
 margin_top = 43.0
 margin_right = 126.0
 margin_bottom = 83.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel12" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot12" type="Panel" parent="background/GridContainer"]
 margin_left = 129.0
 margin_top = 43.0
 margin_right = 169.0
 margin_bottom = 83.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel13" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot13" type="Panel" parent="background/GridContainer"]
 margin_left = 172.0
 margin_top = 43.0
 margin_right = 212.0
 margin_bottom = 83.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel14" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot14" type="Panel" parent="background/GridContainer"]
 margin_left = 215.0
 margin_top = 43.0
 margin_right = 255.0
 margin_bottom = 83.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel15" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot15" type="Panel" parent="background/GridContainer"]
 margin_left = 258.0
 margin_top = 43.0
 margin_right = 298.0
 margin_bottom = 83.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel16" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot16" type="Panel" parent="background/GridContainer"]
 margin_left = 301.0
 margin_top = 43.0
 margin_right = 341.0
 margin_bottom = 83.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel17" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot17" type="Panel" parent="background/GridContainer"]
 margin_top = 86.0
 margin_right = 40.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel18" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot18" type="Panel" parent="background/GridContainer"]
 margin_left = 43.0
 margin_top = 86.0
 margin_right = 83.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel19" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot19" type="Panel" parent="background/GridContainer"]
 margin_left = 86.0
 margin_top = 86.0
 margin_right = 126.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel20" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot20" type="Panel" parent="background/GridContainer"]
 margin_left = 129.0
 margin_top = 86.0
 margin_right = 169.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel21" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot21" type="Panel" parent="background/GridContainer"]
 margin_left = 172.0
 margin_top = 86.0
 margin_right = 212.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel22" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot22" type="Panel" parent="background/GridContainer"]
 margin_left = 215.0
 margin_top = 86.0
 margin_right = 255.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel23" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot23" type="Panel" parent="background/GridContainer"]
 margin_left = 258.0
 margin_top = 86.0
 margin_right = 298.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel24" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot24" type="Panel" parent="background/GridContainer"]
 margin_left = 301.0
 margin_top = 86.0
 margin_right = 341.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel25" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot25" type="Panel" parent="background/GridContainer"]
 margin_top = 129.0
 margin_right = 40.0
 margin_bottom = 169.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel26" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot26" type="Panel" parent="background/GridContainer"]
 margin_left = 43.0
 margin_top = 129.0
 margin_right = 83.0
 margin_bottom = 169.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel27" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot27" type="Panel" parent="background/GridContainer"]
 margin_left = 86.0
 margin_top = 129.0
 margin_right = 126.0
 margin_bottom = 169.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel28" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot28" type="Panel" parent="background/GridContainer"]
 margin_left = 129.0
 margin_top = 129.0
 margin_right = 169.0
 margin_bottom = 169.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel29" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot29" type="Panel" parent="background/GridContainer"]
 margin_left = 172.0
 margin_top = 129.0
 margin_right = 212.0
 margin_bottom = 169.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel30" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot30" type="Panel" parent="background/GridContainer"]
 margin_left = 215.0
 margin_top = 129.0
 margin_right = 255.0
 margin_bottom = 169.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel31" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot31" type="Panel" parent="background/GridContainer"]
 margin_left = 258.0
 margin_top = 129.0
 margin_right = 298.0
 margin_bottom = 169.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
 
-[node name="Panel32" type="Panel" parent="background/GridContainer"]
+[node name="inventory_slot32" type="Panel" parent="background/GridContainer"]
 margin_left = 301.0
 margin_top = 129.0
 margin_right = 341.0
 margin_bottom = 169.0
 rect_min_size = Vector2( 40, 40 )
-custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )

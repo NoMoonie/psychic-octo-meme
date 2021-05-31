@@ -12,27 +12,32 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
-"path": "res://menus/assets/scripts/inventory.gd"
+"path": "res://globals/scripts/inventory.gd"
 }, {
 "base": "Resource",
 "class": "ItemResource",
 "language": "GDScript",
-"path": "res://menus/assets/scripts/item.gd"
+"path": "res://globals/scripts/item.gd"
 }, {
 "base": "slot",
 "class": "equipment_slot",
 "language": "GDScript",
-"path": "res://menus/equipment/scripts/equipmentSlot.gd"
+"path": "res://menus/slotTypes/equipmentSlot.gd"
+}, {
+"base": "Control",
+"class": "gui",
+"language": "GDScript",
+"path": "res://globals/Classes/gui.gd"
 }, {
 "base": "slot",
 "class": "inventory_slot",
 "language": "GDScript",
-"path": "res://menus/inventory/scripts/invSlot.gd"
+"path": "res://menus/slotTypes/invSlot.gd"
 }, {
 "base": "Node2D",
 "class": "mouse_slot",
 "language": "GDScript",
-"path": "res://menus/assets/scripts/mouse_slot.gd"
+"path": "res://globals/scripts/mouse_slot.gd"
 }, {
 "base": "Panel",
 "class": "slot",
@@ -42,16 +47,23 @@ _global_script_classes=[ {
 "base": "slot",
 "class": "tool_slot",
 "language": "GDScript",
-"path": "res://menus/toolbar/scripts/toolSlot.gd"
+"path": "res://menus/slotTypes/toolSlot.gd"
+}, {
+"base": "slot",
+"class": "weapon_slot",
+"language": "GDScript",
+"path": "res://menus/slotTypes/weaponSlot.gd"
 } ]
 _global_script_class_icons={
 "Inventory": "",
 "ItemResource": "",
 "equipment_slot": "",
+"gui": "",
 "inventory_slot": "",
 "mouse_slot": "",
 "slot": "",
-"tool_slot": ""
+"tool_slot": "",
+"weapon_slot": ""
 }
 
 [application]

@@ -14,7 +14,7 @@ var label = null
 #get init inventory
 var node = null
 var inventory : String = ""
-enum itemType { Generic, Consumable, Quest, Equipment, CraftingMaterial }
+enum itemType { Generic, Consumable, Quest, Equipment, CraftingMaterial, Weapon }
 export(itemType) var type 
 
 func _ready():
@@ -68,11 +68,9 @@ func refresh():
 func _notification(what):
 	match what:
 		NOTIFICATION_MOUSE_ENTER:
-			#print(slot_index)
-			#print("in")
+			print(slot_index)
 			pass
 		NOTIFICATION_MOUSE_EXIT:
-			#print("out")
 			pass
 
 func input(event, slot, mouse_slot):
