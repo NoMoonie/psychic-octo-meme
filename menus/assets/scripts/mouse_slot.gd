@@ -41,18 +41,21 @@ func dropItem():
 			var player = get_tree().get_root().get_node("/root/World/Player")
 			var _item_inst = load("res://Assets/items/item.tscn").instance()
 			_item_inst.global_transform = player.global_transform
+			
 			#new item to add into the world
 			var new_item = {
 				item_referance = item.item_referance,
 				quantity = 1
 			}
 			_item_inst.item = new_item
-			
 			_item_inst.terrain = "../VoxelTerrain"
 			#decriss held items count by one
 			var current_quantity = item.quantity
 			var new_quantity = current_quantity - 1
-			addRemainder(new_quantity)
+			if new_quantity > 0:
+				addRemainder(new_quantity)
+			else:
+				pickFromSlot()
 			var root = get_tree().get_root().get_node("/root/World").add_child(_item_inst)
 
 func dropStack():
