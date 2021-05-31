@@ -40,6 +40,7 @@ var _grounded = false
 
 var inventory = load("res://menus/Resource/inv.tres")
 var toolbar = load("res://menus/Resource/toolbar.tres")
+var equipment = preload("res://menus/Resource/equipment.tres")
 
 func _ready():
 	boxMover.set_collision_mask(1)

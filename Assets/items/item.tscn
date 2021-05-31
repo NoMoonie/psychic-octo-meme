@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/overworld/blocks/grass/grass.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/material/itemMovement.gd" type="Script" id=2]
@@ -19,6 +19,9 @@ tracks/0/keys = {
 "values": [ Vector3( -0.5, 0, -0.5 ), Vector3( -0.5, 0.5, -0.5 ) ]
 }
 
+[sub_resource type="SphereShape" id=2]
+radius = 2.0
+
 [node name="item" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -29,3 +32,11 @@ material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/wave = SubResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

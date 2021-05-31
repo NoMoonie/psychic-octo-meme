@@ -7,11 +7,15 @@ export var max_terminal_velocity : float = 54
 export var rotation_speed : float = 7
 export var speed : float = rand_range(3, 7)
 
+var droptimer = 60 * 2
+var is_droped = true
+
 var item = null
 onready var mesh = $MeshInstance
 # Not used in this script, but might be useful for child nodes because
 # this controller will most likely be on the root
 export(NodePath) var terrain = null
+
 
 func _ready():
 	mesh.mesh = item.item_referance.mesh
@@ -26,6 +30,11 @@ var motor = Vector3()
 var x = rand_range(-1, 1)
 var z = rand_range(-1, 1)
 func _physics_process(delta):
+	if droptimer > 0:
+		droptimer -= 1
+	else:
+		is_droped = false
+		
 	if x == z:
 		z = 0
 	var	direction = Vector3()
@@ -39,7 +48,6 @@ func _physics_process(delta):
 		direction = Vector3(0,0,0)
 	else:
 		speed = 0
-	
 	
 	_velocity.x = motor.x
 	_velocity.z = motor.z
@@ -68,3 +76,11 @@ func isOnFloor(motion : Vector3, prev_motion : Vector3):
 	else:
 		_grounded = false
 
+
+func _on_Area_body_entered(body):
+	if body.is_in_group("Player"):
+		if !is_droped:
+			var name = item.item_referance.name
+			var quantity = item.quantity
+			body.inventory.add_item(name, quantity)
+			queue_free()

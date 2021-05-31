@@ -98,3 +98,5 @@ func clear_inventory():
 func create_resourse(filename:String, size:int):
 	pass
 
+func save():
+	emit_signal("inventory_changed", self)

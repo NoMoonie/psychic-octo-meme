@@ -19,9 +19,9 @@ __meta__ = {
 }
 
 [node name="background" type="Panel" parent="."]
-margin_right = 360.0
+margin_right = 340.0
 margin_bottom = 190.0
-rect_min_size = Vector2( 340, 180 )
+rect_min_size = Vector2( 360, 190 )
 mouse_filter = 2
 custom_styles/panel = SubResource( 1 )
 __meta__ = {

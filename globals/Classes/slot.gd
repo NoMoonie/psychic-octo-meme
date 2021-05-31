@@ -14,6 +14,8 @@ var label = null
 #get init inventory
 var node = null
 var inventory : String = ""
+enum itemType { Generic, Consumable, Quest, Equipment, CraftingMaterial }
+export(itemType) var type 
 
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS

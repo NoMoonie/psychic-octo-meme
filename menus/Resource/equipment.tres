@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-_items = [ null, null, null, null, null, null, null, null, null ]
+_items = [ null, null, null, null, null, null, null, null ]
