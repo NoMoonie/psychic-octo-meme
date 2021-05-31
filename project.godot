@@ -12,32 +12,32 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
-"path": "res://Scipts/inventory/inventory.gd"
+"path": "res://menus/assets/scripts/inventory.gd"
 }, {
 "base": "Resource",
 "class": "ItemResource",
 "language": "GDScript",
-"path": "res://Scipts/inventory/item.gd"
+"path": "res://menus/assets/scripts/item.gd"
 }, {
 "base": "slot",
 "class": "inventory_slot",
 "language": "GDScript",
-"path": "res://UI/inventory/scripts/slots/invSlot.gd"
+"path": "res://menus/inventory/scripts/invSlot.gd"
 }, {
 "base": "Node2D",
 "class": "mouse_slot",
 "language": "GDScript",
-"path": "res://UI/inventory/scripts/slots/mouse_slot.gd"
+"path": "res://menus/assets/scripts/mouse_slot.gd"
 }, {
 "base": "Panel",
 "class": "slot",
 "language": "GDScript",
-"path": "res://invgui/slot.gd"
+"path": "res://globals/Classes/slot.gd"
 }, {
 "base": "slot",
 "class": "tool_slot",
 "language": "GDScript",
-"path": "res://UI/inventory/scripts/slots/toolSlot.gd"
+"path": "res://menus/toolbar/scripts/toolSlot.gd"
 } ]
 _global_script_class_icons={
 "Inventory": "",
@@ -51,12 +51,12 @@ _global_script_class_icons={
 [application]
 
 config/name="VoxelProj"
-run/main_scene="res://World/World.tscn"
+run/main_scene="res://scenes/overworld/World.tscn"
 
 [autoload]
 
-ItemDatebase="*res://Scipts/Manegers/itemDatebase.gd"
-GameManeger="*res://Scipts/Manegers/gameManeger.gd"
+ItemDatebase="*res://globals/Manegers/itemDatebase.gd"
+GameManeger="*res://globals/Manegers/gameManeger.gd"
 
 [display]
 

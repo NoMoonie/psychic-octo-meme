@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/skull.vox-d261e789a8ef14a43b20cce47cb4a41b.mesh"
+
+[deps]
+
+source_file="res://entities/player/assets/skull.vox"
+dest_files=[ "res://.import/skull.vox-d261e789a8ef14a43b20cce47cb4a41b.mesh" ]
+
+[params]
+
+Scale=0.1

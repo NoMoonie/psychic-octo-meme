@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/handleft.vox-74f1cac44649247c269fadd105eee3da.mesh"
+
+[deps]
+
+source_file="res://entities/player/assets/handleft.vox"
+dest_files=[ "res://.import/handleft.vox-74f1cac44649247c269fadd105eee3da.mesh" ]
+
+[params]
+
+Scale=0.1

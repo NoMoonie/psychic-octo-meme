@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/grass.obj-e9c0818f6e7513a69d9575b66d2416df.mesh"
+
+[deps]
+
+files=[ "res://.import/grass.obj-e9c0818f6e7513a69d9575b66d2416df.mesh" ]
+
+source_file="res://scenes/overworld/blocks/grass/grass.obj"
+dest_files=[ "res://.import/grass.obj-e9c0818f6e7513a69d9575b66d2416df.mesh", "res://.import/grass.obj-e9c0818f6e7513a69d9575b66d2416df.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

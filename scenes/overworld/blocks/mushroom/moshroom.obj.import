@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/moshroom.obj-ac5686330d6325b37c2aaa20243a7b02.mesh"
+
+[deps]
+
+files=[ "res://.import/moshroom.obj-ac5686330d6325b37c2aaa20243a7b02.mesh" ]
+
+source_file="res://scenes/overworld/blocks/mushroom/moshroom.obj"
+dest_files=[ "res://.import/moshroom.obj-ac5686330d6325b37c2aaa20243a7b02.mesh", "res://.import/moshroom.obj-ac5686330d6325b37c2aaa20243a7b02.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

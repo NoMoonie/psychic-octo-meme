@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/foot.vox-d82fd43876df33e5d2f3ac9c37c16128.mesh"
+
+[deps]
+
+source_file="res://entities/player/assets/foot.vox"
+dest_files=[ "res://.import/foot.vox-d82fd43876df33e5d2f3ac9c37c16128.mesh" ]
+
+[params]
+
+Scale=0.1

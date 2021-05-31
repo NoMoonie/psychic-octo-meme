@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/handright.vox-8f1b5ba41d3e57047eea7e85d6bc1cc2.mesh"
+
+[deps]
+
+source_file="res://entities/player/assets/handright.vox"
+dest_files=[ "res://.import/handright.vox-8f1b5ba41d3e57047eea7e85d6bc1cc2.mesh" ]
+
+[params]
+
+Scale=0.1
