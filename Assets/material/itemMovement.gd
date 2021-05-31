@@ -5,6 +5,7 @@ export var air_acceleration : float = 5
 export var gravity : float = 5
 export var max_terminal_velocity : float = 54
 export var rotation_speed : float = 7
+export var speed : float = rand_range(3, 7)
 
 var item = null
 onready var mesh = $MeshInstance
@@ -19,10 +20,29 @@ func _ready():
 var _velocity = Vector3()
 var _grounded = false
 var _box_mover = VoxelBoxMover.new()
+var motor = Vector3()
 
+
+var x = rand_range(-1, 1)
+var z = rand_range(-1, 1)
 func _physics_process(delta):
-	#_velocity.x = motor.x
-	#_velocity.z = motor.z
+	if x == z:
+		z = 0
+	var	direction = Vector3()
+	direction = Vector3(x,
+	0,
+	z).normalized()
+	
+	motor = direction * speed
+	if speed > 0:
+		speed -= 0.1
+		direction = Vector3(0,0,0)
+	else:
+		speed = 0
+	
+	
+	_velocity.x = motor.x
+	_velocity.z = motor.z
 	_velocity.y -= gravity * delta * acceleration
 	
 	if _grounded:
